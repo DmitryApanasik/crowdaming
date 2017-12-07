@@ -1,0 +1,186 @@
+.panel-login {
+  border-color: #ccc;
+  -webkit-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.9);
+  -moz-box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.9);
+  box-shadow: 0px 2px 3px 0px rgba(0,0,0,0.9);
+}
+.panel-login>.panel-heading {
+  text-align:center;
+}
+.panel-login>.panel-heading a{
+  text-decoration: none;
+  color: #666;
+  font-weight: bold;
+  font-size: 15px;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+.panel-login>.panel-heading a.active{
+  color: #59B2E0;
+  font-size: 18px;
+  outline: none;
+}
+.panel-login>.panel-heading a:active{
+  color: #59B2E0;
+  font-size: 18px;
+  outline: none;
+}
+.panel-login>.panel-heading hr{
+  margin-top: 10px;
+  margin-bottom: 0px;
+  clear: both;
+  border: 0;
+  height: 1px;
+  background-image: -webkit-linear-gradient(left,rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.15),rgba(0, 0, 0, 0));
+  background-image: -moz-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+  background-image: -ms-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+  background-image: -o-linear-gradient(left,rgba(0,0,0,0),rgba(0,0,0,0.15),rgba(0,0,0,0));
+}
+.panel-login input[type="text"],.panel-login input[type="email"],.panel-login input[type="password"] {
+  height: 45px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  -webkit-transition: all 0.1s linear;
+  -moz-transition: all 0.1s linear;
+  transition: all 0.1s linear;
+}
+.panel-login input:hover,
+.panel-login input:focus {
+  outline:none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  border-color: #ccc;
+}
+.btn-login {
+  background-color: #59B2E0;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  height: auto;
+  font-weight: normal;
+  padding: 14px 0;
+  text-transform: uppercase;
+  border-color: #59B2E6;
+}
+.btn-login:hover,
+.btn-login:focus {
+  color: #fff;
+  background-color: #53A3CD;
+  border-color: #53A3CD;
+}
+.forgot-password {
+  text-decoration: underline;
+  color: #888;
+}
+.forgot-password:hover,
+.forgot-password:focus {
+  text-decoration: underline;
+  color: #666;
+}
+
+.btn-register {
+  background-color: #59B2E0;
+  outline: none;
+  color: #fff;
+  font-size: 14px;
+  height: auto;
+  font-weight: normal;
+  padding: 14px 0;
+  text-transform: uppercase;
+  border-color: #59B2E0;
+}
+.btn-register:hover,
+.btn-register:focus {
+  color: #fff;
+  background-color: #59B2E0;
+  border-color: #59B2E0;
+}
+
+.redLine {
+  border-left: 3px solid red !important;
+  box-shadow: 0 0 1px 0 red !important;
+  background-color: transparent !important;
+}
+
+.greenLine {
+  border-left: 3px solid #4CAF50 !important;
+  box-shadow: 0 0 1px 0 #4CAF50 !important;
+  background-color: transparent !important;
+}
+
+
+.modal:target {
+  top: 50%;
+  transition: all 0.4s ease-in-out;
+  -moz-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  z-index: 1050;
+}
+
+.modal header, .modal footer {
+  background: #f7f7f7;
+  border-bottom: 1px solid #e7e7e7;
+  border-radius: 5px 5px 0 0;
+  -moz-border-radius: 5px 5px 0 0;
+  -webkit-border-radius: 5px 5px 0 0;
+}
+.modal footer {
+  border:none;
+  border-top: 1px solid #e7e7e7;
+  border-radius: 0 0 5px 5px;
+  -moz-border-radius: 0 0 5px 5px;
+  -webkit-border-radius: 0 0 5px 5px;
+}
+.modal section, .modal header, .modal footer {
+  padding: 15px;
+  z-index: 1050;
+}
+.modal h2 {
+  margin: 0;
+}
+.modal .btn {
+  float: right;
+}
+.none{
+  display: none;
+}
+div:target{
+  display: block;
+}
+
+/*button*/
+
+a.button18 {
+  display: inline-block;
+  font-size: 12px;
+  color: rgb(205,216,228);
+  text-decoration: none;
+  padding: .2em .8em;
+  outline: none;
+  border-right: 1px solid rgba(13,20,27,.5);
+  border-top: 1px solid rgba(270,278,287,.01);
+  background-color: rgb(64,73,82);
+  background-image:
+    radial-gradient(1px 60% at 0% 50%, rgba(255,255,255,.3), transparent),
+    radial-gradient(1px 60% at 100% 50%, rgba(255,255,255,.3), transparent),
+    linear-gradient(rgb(64,73,82), rgb(72,81,90));
+}
+a.button18:hover {
+  background-image:
+    radial-gradient(1px 60% at 0% 50%, rgba(255,255,255,.3), transparent),
+    radial-gradient(1px 60% at 100% 50%, rgba(255,255,255,.3), transparent),
+    linear-gradient(rgb(51,60,67), rgb(58,65,72));
+}
+a.button18:focus {
+  color: rgb(245,247,250);
+  border-top: 1px solid rgb(67,111,136);
+  background-image:
+    linear-gradient(rgb(46,95,122), rgb(36,68,92));
+}
+a.button18:focus:hover {
+  border-top: 1px solid rgb(49,87,107);
+  background-image:
+    linear-gradient(rgb(33,77,98), rgb(29,57,77));
+}

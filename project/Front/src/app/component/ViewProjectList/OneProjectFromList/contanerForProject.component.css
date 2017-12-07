@@ -1,0 +1,17 @@
+.project-image{
+  position: relative;
+  width: 360px;
+  height:250px;
+
+}
+.font{
+  font-weight: 700;
+}
+.pos{
+  position: relative;
+  padding: 15px;
+  background: oldlace;
+}
+.panel-body{
+  background: #cccccc;
+}

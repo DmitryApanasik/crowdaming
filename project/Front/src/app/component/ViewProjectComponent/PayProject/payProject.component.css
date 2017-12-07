@@ -1,0 +1,12 @@
+.input-money{
+  position: relative;
+  /*left:50px;*/
+  width: 400px;
+  height: 50px;
+  padding: 30px;
+  margin-bottom: 30px;
+}
+#transferMoney{
+  position: absolute;
+  left: 200px;
+}

@@ -1,0 +1,16 @@
+input{
+  max-width: 500px;
+}
+input.ng-touched.ng-invalid {border:solid red 2px;}
+input.ng-touched.ng-valid {border:solid green 2px;}
+.form-group{
+  position: relative;
+  left:40%;
+}
+.panel-default{
+  background: cornsilk; ;
+}
+.pos{
+  position: relative;
+  left:20%;
+}

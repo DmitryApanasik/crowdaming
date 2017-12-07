@@ -1,0 +1,15 @@
+<form #projectListForm="ngForm" role="form" style="position:relative; top: 85px;">
+  <div>
+    <button class="btn btn-success" routerLink="/project" style="position:relative;left: 41%; width: 20%">{{'Create'|translate}}</button>
+  </div>
+  <div class="container" style="padding-left: 180px">
+    <div class="panel-group">
+      <div *ngFor="let project of projects">
+        <app-contaner-for-project [project] = "project"></app-contaner-for-project>
+      </div>
+    </div>
+  </div>
+  <footer></footer>
+</form>
+
+

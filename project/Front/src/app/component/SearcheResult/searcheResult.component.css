@@ -1,0 +1,11 @@
+.container{
+  position: relative;
+  padding: 2%;
+  width:80%;
+}
+.panel-group {
+
+  margin-bottom: 20px;
+  display: inline-flex;
+  flex-wrap: wrap;
+}

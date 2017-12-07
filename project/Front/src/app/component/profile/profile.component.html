@@ -1,0 +1,12 @@
+<nav id="navbar-header" class="navbar navbar-default" role="navigation" >
+  <div class="container-fluid">
+    <h2 class="text-log" translate>{{'Profile'|translate}}</h2>
+  </div>
+</nav>
+<body *ngIf="authGuard.isActivate() == true">
+<app-menu-profile></app-menu-profile>
+<!--<app-blocked-page></app-blocked-page>-->
+</body>
+<body *ngIf="authGuard.isActivate() == false">
+you can't go to the page. Please login or registrate.
+</body>

@@ -1,0 +1,27 @@
+<div class="modal-dialog">
+  <div class="modal-content panel-login">
+    <div class="panel-heading">
+   <div class="row">
+      <div class="col-xs-6" >
+        <a  href="#login"  id="login-form-link" [class.active]="activeLinkLogin" (click)="changeActiveLogin()" tabindex="0"  style="display: block; ">{{ "LOGIN" | translate}}</a>
+        </div>
+        <div class="col-xs-6" >
+          <a  href="#register" id="register-form-link" [class.active]="activeLinkRegister" (click)="changeActiveRegister()" tabindex="1" style="display: block;" >{{"REGISTER"| translate}}</a>
+          <br>
+      </div>
+    </div>
+   <hr/>
+   </div>
+    <div id="login" *ngIf="activeLinkLogin" >
+      <h2 class="text-center">{{'LOGIN'|translate}}</h2>
+      <app-login-page></app-login-page>
+    </div>
+    <div id="register" *ngIf="activeLinkRegister" >
+      <h2 class="text-center"> {{'REGISTER'|translate}}</h2>
+      <app-register-page></app-register-page>
+    </div>
+    <div class="modal-footer">
+      <button  type="button" class="btn-default btn" data-dismiss="modal">{{'Close'|translate}}</button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+<form #form="ngForm" role="form">
+  <div class="container" style="width: 100%; height:750px; max-width: 440px">
+    <div class="panel panel-default" style="max-height:750px;">
+      <div class="panel-heading" style="height: 200px" >
+        <h1><a (click)="redirectToProject()">{{project.name}}</a></h1>
+      </div>
+      <div class="panel-body">
+        <img src="{{project.image}}" class="project-image">
+          </div >
+      <div class="pos">
+        <p><span class="font">{{'Purpose'|translate}}</span>{{project.purpose}}</p>
+        <p><span class="font">{{'MoneyProject'|translate}}</span> {{project.money}}</p>
+        <p><span class="font"> {{'Cash'|translate}}:</span> {{project.cash}}</p>
+      <div class="row">
+        <div class="col-xs-4">
+          <p><span class="glyphicon glyphicon-calendar"></span>{{project.dwy}} </p>
+        </div>
+        <div class="col-xs-8">
+          <p><span class="font"> {{'Status'|translate}}</span>  {{project.statusEntity.status}}</p>
+        </div>
+      </div>
+      </div>
+    </div>
+      </div>
+</form>

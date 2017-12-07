@@ -1,0 +1,41 @@
+<!--<div *ngIf="user.role == 'admin'">-->
+
+<!--</div>-->
+<!--<div *ngIf="user.role != 'admin'">-->
+<!--<app-error></app-error>-->
+<!--</div>-->
+
+<form #projectListForm="ngForm" role="form" >
+  <div class="panel">
+    <div class="panel-group" align="center">
+      <table class="table_dark" style="position:relative;left: 100px;">
+        <tr>
+          <th>
+            <div class="dropdown settings" dropdown>
+              <button class="btn btn-default"  dropdown-open style="position:relative; left: 20px;"><span class="glyphicon glyphicon-cog"></span></button>
+              <ul class="dropdown-menu" style="left: 0;">
+                <li><a (click)="blocked(0)">{{'Block'|translate}}</a></li>
+                <li><a (click)="blocked(1)">{{'UnBlock'|translate}}</a></li>
+                <li><a (click)="blocked(2)">{{'Delete'|translate}}</a></li>
+               </ul>
+            </div>
+          </th>
+          <th>{{'Image'|translate}}</th>
+          <th>{{'Information'|translate}}</th>
+          <th>{{'Email'|translate}}</th>
+        </tr>
+        <tr *ngFor="let user of users, let idx = index" >
+          <td>
+            <div>
+              <input type="checkbox" id="blocked" (click)="blockedCheckbox(user.id)" class="checkbox"  style=" width: 40px; height:40px;" >
+            </div>
+          </td>
+          <td><img src="{{user.image}}" style="width: 200px; height:150px;"></td>
+          <td>{{user.firstName}} {{user.userName}} {{user.lastName}}</td>
+          <td>{{user.email}}</td>
+        </tr>
+        <tr>
+      </table>
+    </div>
+  </div>
+</form>

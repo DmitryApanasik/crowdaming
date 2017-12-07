@@ -1,0 +1,28 @@
+
+<form id="login-form" #form="ngForm"  (onSubmit)="formReset(form)">
+  <div class="form-group" >
+    <input align="center" type="text" [(ngModel)]="user.userName" name="username" id="username"
+           tabindex="1" class="form-control" #username="ngModel"
+    value="" placeholder="{{'Nick'|translate}}" (input)="checkLogin()" required >
+    <br>
+    <input type="password" [(ngModel)]="user.password" name="password" id="password" tabindex="2"
+           class="form-control" #password="ngModel"
+           value="" placeholder="{{'password'|translate}}" (input)="checkPassword()"
+           required pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).{8,}$">
+    <div [hidden]="password.valid || password.untouched"
+         class="alert" style="color: red">{{'IncorrectPassword'|translate}}</div>
+  </div>
+  <div class="form-group">
+    <div class="row">
+      <div class="col-sm-6 col-sm-offset-3">
+        <input [disabled]="username.invalid || password.invalid" type="submit"
+               name="login-submit" id="login-submit" tabindex="3"
+               class="btn btn-info btn-block"  (click)="login(form.value)"  value="{{'LOGIN'| translate}}">
+        <div *ngIf="errorMessage">
+        <div class="alert" style=" left: 50px;color: red">{{errorMessage}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button style="display: none" id="hidden-submit"  data-dismiss="modal"></button>
+</form>

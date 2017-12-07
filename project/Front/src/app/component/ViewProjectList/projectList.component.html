@@ -1,0 +1,22 @@
+<form #projectListForm="ngForm" role="form" style="position:relative; top: 85px;">
+  <div class="sort-btn">
+    <div class="panel panel-default">
+      <div class="dropdown settings" dropdown>
+        <button class="btn btn-default"  dropdown-open style="position:relative; left: 20px;">{{'Sort'|translate}}</button>
+        <ul class="dropdown-menu" style="left: 0;">
+          <li><a (click)="getSortProject(0)">{{'NotSort'|translate}}</a></li>
+          <li><a (click)="getSortProject(1)">{{'Relevant'|translate}}</a></li>
+          <li><a (click)="getSortProject(2)">{{'DateSort'|translate}}</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="container" style="padding-left: 180px">
+    <div class="panel-group">
+      <div *ngFor="let project of projects">
+        <app-contaner-for-project [project] = "project"></app-contaner-for-project>
+      </div>
+    </div>
+  </div>
+  <footer></footer>
+</form>

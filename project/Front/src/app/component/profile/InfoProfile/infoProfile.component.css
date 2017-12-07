@@ -1,0 +1,14 @@
+.container{
+  position: relative;
+  padding:100px;
+}
+.panel-default{
+  position: relative;
+  top:50%;
+  left:50%;
+}
+.panel-title{
+  position: absolute;
+  margin-bottom: 3%;
+  left:50%;
+}

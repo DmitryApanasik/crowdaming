@@ -1,0 +1,78 @@
+
+<form class="register-form" #form="ngForm" (ngSubmit)="updateProfile(form.value)" role="form" style="display: inline">
+  <div class="container">
+    <div class="panel" id="imagearea">
+      <div class="panel-default">
+      <div class="col-lg-3 col-md-3 hidden-sm hidden-xs" id="photo">
+
+              <div align="center">
+                <img id="id-area-image" class="img-responsive" src={{user.image}}/>
+              </div>
+      </div>
+
+      <div>
+        <app-cloudinary (upImgStep)="updateImg($event)"></app-cloudinary>
+      </div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="panel panel-default">
+        <div class="row">
+      <div class="col-xs-5">
+        <div class="form-group-label" style="position: relative; left: 10px;">
+          <label class="label-style">{{'FirstName'|translate}}</label>
+          <input type="text" [(ngModel)]="user.firstName" name="firstname"
+                 id="firstname" class="form-control" value=""
+                 placeholder="{{'newFirstName'|translate}}" #firstname="ngModel" required >
+          <br>
+          <label class="label-style">{{'LastName'|translate}}</label>
+          <input type="text" [(ngModel)]="user.lastName" name="lastname" id="lastname" class="form-control" value=""
+                 placeholder="{{'newLastName'|translate}}"  #lastname="ngModel" required >
+          <br>
+          <label class="label-style">{{'email'|translate}}</label>
+          <input type="text" [(ngModel)]="user.email" name="email" id="email" class="form-control" value=""
+                 placeholder="{{'newemail'|translate}}"  #email="ngModel" required email>
+          <div [hidden]="email.valid || email.untouched" class="alert" style="color: red">
+            {{'IncorrectEmail'|translate}}
+          </div>
+          <br>
+        </div>
+      </div>
+
+      <div class="col-xs-5">
+        <div class="form-group">
+          <label class="label-style">{{'Nick'|translate}}</label>
+    <input type="text" [(ngModel)]="user.userName" name="nickName" id="nickName" class="form-control" value=""
+           placeholder="{{'newNick'|translate}}"  #nickName="ngModel" required>
+    <br>
+          <label class="label-style">{{'password'|translate}}</label>
+    <input type="password" [(ngModel)]="user.password" name="password"
+           id="password" class="form-control" value=""
+           placeholder="{{'newpassword'|translate}}"
+           #password="ngModel" required pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).{8,}$" >
+    <div [hidden]="password.valid || password.untouched"
+         class="alert" style="color: red">{{'IncorrectPassword'|translate}}</div>
+    <br>
+    <div ngClass="{{isPasswordConfirm?'has-success':''}}">
+      <label class="label-style">{{'confirmPassword'|translate}}</label>
+      <input type="password" [(ngModel)]="passwordConfirm" (keyup)="checkPasswordConfirm()"
+             name="passwordConfirm" id="password-confirm" tabindex="4"
+             class="form-control" placeholder="{{'confirmPassword'|translate}}" #confirmpassword="ngModel" required pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z]).{8,}$">
+      <div [hidden]="confirmpassword.valid || confirmpassword.untouched"
+           class="alert" style="color: red"></div>
+      </div>
+    </div>
+    </div>
+    </div>
+      </div>
+      <span class="alert" *ngIf="formErrors.passwordConfirm" style="color: red">
+                {{ 'ErrorConfirm'| translate}}
+              </span>
+      <input [disabled]="firstname.invalid||lastname.invalid||email.invalid||nickName.invalid||password.invalid"
+             type="submit" name="save-submit" id="save-submit" tabindex="3"
+             class="btn btn-success btn-block pos" value="{{'SAVE'| translate}}" style="position:relative; top: 20px;">
+    </div>
+  </div>
+</form>
+

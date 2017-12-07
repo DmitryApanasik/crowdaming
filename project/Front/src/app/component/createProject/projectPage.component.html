@@ -1,0 +1,71 @@
+<form #form="ngForm"   role="form" *ngIf="authGuard.isActivate() == true" (ngSubmit)="sendData(form.value)">
+<div class="project-page">
+  <div  align="center">
+  <div class="panel" id="imagearea" style="position: relative; max-width: 1400px;background: cornsilk">
+
+    <div class="col-lg-3 col-md-3 hidden-sm hidden-xs" id="photo">
+
+      <div class="panel panel-default" style=" position: absolute;width: 300px; height: 200px;background: cornsilk">
+        <div class="panel-body" >
+          <div class="media">
+            <div align="center">
+              <img id="id-area-image" class="img-responsive" name="project_image" src={{project.image}}/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <app-cloudinary (upImgStep)="updateImg($event)"></app-cloudinary>
+    </div>
+
+  </div>
+
+<div class="pos">
+  <input type="text" [(ngModel)]="project.name" name="name" class="nameproject" id="name-project" placeholder="{{'NameProject'|translate}}">
+</div>
+  <br>
+  <div class="pos">
+  <input type="text" [(ngModel)]="project.purpose" name="purpose" class="nameproject" id="purpose-project" placeholder="{{'Purpose'|translate}}">
+  </div>
+  <div class="pos">
+    <textarea class="description" [(ngModel)]="project.content" id="text-area-component" name="descriptionProject" placeholder="{{'DescriptionProject'|translate}}"></textarea>
+  </div>
+  <div class="panel-mony panel panel-default" style="width:1400px;background: cornsilk">
+    <div class="panel-body">
+      <div class="row">
+        <h2 class="col-lg-6 col-xs-6 col-sm-6" >{{'DateProject'|translate}}</h2>
+        <div>
+          <ng2-datepicker [(ngModel)]="project.dwy" [ngModelOptions]="{standalone: true}"
+                          style="position:relative; top: 20px;" ></ng2-datepicker>
+        </div>
+      </div>
+    </div>
+    </div>
+<div class="panel-mony panel panel-default" style="width:1400px;background: cornsilk">
+  <div class="panel-body">
+  <div class="row">
+    <h2 class="col-lg-6 col-xs-6 col-sm-6"  >{{'RequerMoney'|translate}}</h2>
+    <div>
+      <input type="text" style="position: absolute; top: 30px;right: 190px" [(ngModel)]="project.money" id="money-field" name="money" class="mony"/>
+    </div>
+  </div>
+  </div>
+</div>
+  <div>
+  <tag-input style="position:relative; max-width: 1400px; left: 20px;" [(ngModel)]='tags' [editable]='true' (onTagEdited)="onTagEdited($event)" [ngModelOptions]="{standalone: true}"></tag-input>
+</div>
+  <div class="container">
+  <div align="center" class="createButton">
+    <input
+      type="submit" name="project-submit" id="project-submit" tabindex="3"
+      class="btn btn-success btn-block" style="margin-bottom: 50px; width: 300px;" value="{{'Create'| translate}}">
+  </div>
+  </div>
+</div>
+</div>
+</form>
+<div style="position:relative; top: 80px" *ngIf="authGuard.isActivate() == false">
+  Sorry. Login or Get confirm from admin.
+</div>

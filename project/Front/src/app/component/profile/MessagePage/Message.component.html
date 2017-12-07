@@ -1,0 +1,42 @@
+<form #forMessage="ngForm" role="form">
+  <div class="container">
+    <table class="table_dark" style="position:absolute;left: 250px;">
+      <th>{{'Scan'|translate}}</th>
+      <th>{{'ConfirmInformation'|translate}}</th>
+      <tr *ngFor="let message of messages, let idx = index">
+        <td style="width: 50%"><img src="{{message.image}}" style="width: 700px; height:650px;"></td>
+        <td>
+          <tr class="text-confirm">
+      <div>
+      <label class="label-style">{{'FirstName'|translate}}:</label>
+              {{message.user.firstName}}
+      </div>
+      <div>
+      <label class="label-style">{{'LastName'|translate}}:</label>
+              {{message.user.lastName}}
+      </div>
+      <div>
+      <label class="label-style">{{'Nick'|translate}}:</label>
+              {{message.user.userName}}
+      </div>
+      <div>
+      <label class="label-style">{{'email'|translate}}:</label>
+              {{message.user.email}}
+      </div>
+          </tr>
+          <tr class="text-confirm">
+            <label class="label-style">{{'Description'|translate}}:</label>
+            {{message.text}}
+          </tr>
+        </td>
+      <div class="dropdown settings" dropdown>
+        <button class="btn btn-default"  dropdown-open style="position:relative; left: 20px;"><span class="glyphicon glyphicon-cog"></span></button>
+        <ul class="dropdown-menu" style="left: 0;">
+          <li><a (click)="confirm(0,message.idmessage)">{{'Confirm'|translate}}</a></li>
+          <li><a (click)="confirm(1,message.idmessage)">{{'UnConfirm'|translate}}</a></li>
+        </ul>
+      </div>
+      </tr>
+    </table>
+  </div>
+</form>

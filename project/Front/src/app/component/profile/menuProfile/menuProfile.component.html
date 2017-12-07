@@ -1,0 +1,30 @@
+<ul class="nav nav-tabs tab" style="position: fixed; z-index:1049;">
+  <li class="active"><a data-toggle="tab" href="#panel1">{{'Profile'|translate}}</a></li>
+  <li><a data-toggle="tab" href="#panel2">{{'EditProfile'|translate}}</a></li>
+  <li><a data-toggle="tab" href="#message" *ngIf="user.role == 'ROLE_ADMIN'">{{'MessageConfirm'|translate}}</a></li>
+  <li><a data-toggle="tab" href="#confirm" *ngIf="user.role == 'ROLE_USER'">{{'ConfirmProfile'|translate}}</a></li>
+  <li><a data-toggle="tab" href="#projectpage" *ngIf="user.role == 'ROLE_VER'">{{'ViewProject'|translate}}</a></li>
+  <li><a data-toggle="tab" href="#admin" *ngIf="user.role == 'ROLE_ADMIN'">{{'Admin'|translate}}</a> </li>
+</ul>
+
+<div class="tab-content">
+  <div id="panel1" class="tab-pane fade in active">
+    <app-info-profile></app-info-profile>
+  </div>
+  <div id="panel2" class="tab-pane fade">
+    <app-edit-profile></app-edit-profile>
+  </div>
+  <div id="confirm" class="tab-pane fade">
+    <app-confirm-profile></app-confirm-profile>
+  </div>
+  <div id="projectpage" class="tab-pane fade">
+    <app-info-project></app-info-project>
+  </div>
+  <div id="admin" class="tab-pane fade">
+    <app-adminPage></app-adminPage>
+  </div>
+  <div id="message" class="tab-pane fade">
+    <app-message-component></app-message-component>
+  </div>
+
+</div>
